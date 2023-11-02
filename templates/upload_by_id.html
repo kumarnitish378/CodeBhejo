@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3CLNJ9HEE"></script>
+    <meta name="google-site-verification" content="bfwg-6HptOECSW2CFIInK85QBi4YYTG-XlmdMwZIf9M" />
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-Z3CLNJ9HEE');
+    </script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/UT_LOGO.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/UT_LOGO.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/UT_LOGO.jpg">
+    <link rel="manifest" href="/static/site.webmanifest">
+    <title>CodeBhejo - Upload File</title>
+    <!-- Meta Tag for SEO -->
+    <meta name="description"
+        content="CodeBhejo is a QR code-based file sharing and management system that simplifies and secures file sharing. Learn how to securely upload, store, and share files using QR codes." />
+    <!-- <meta name="keywords" content="file sharing, file management, QR code, cloud-based storage, secure file sharing" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots"
+        content="index, follow, register, upload_by_id, upload, login, how_to, admin, admin_upload, about">
+    <meta name="keywords"
+        content="share kar do, print kar do, photo copy, file bhejo, file sharing, file management, QR code, cloud-based storage, secure file sharing, QR code file sharing, file sharing system, file management platform, secure file storage, document sharing, data security, cloud file storage, digital file management, online file sharing, file storage solution, data privacy, QR code sharing, document management, file access control, efficient file sharing, file security, file upload, mobile file sharing, web-based file management, data protection, digital document management, document security, file collaboration, file access, online document storage, QR code security, document sharing platform" />
+
+    <meta property="og:title" content="CodeBhejo - QR Code-Based File Sharing and Management System" />
+    <meta property="og:description"
+        content="Simplify and secure file sharing with CodeBhejo. Upload, store, and share files using QR codes." />
+    <meta property="og:image" content="https://www.filebhejo.in/static/fileBhejo.jpg" />
+    <meta property="og:url" content="https://www.filebhejo.in" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CodeBhejo - QR Code-Based File Sharing and Management System" />
+    <meta name="twitter:description"
+        content="Simplify and secure file sharing with CodeBhejo. Upload, store, and share files using QR codes." />
+    <meta name="twitter:image" content="https://www.filebhejo.in/static/fileBhejo.jpg" />
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        h1 {
+            color: #00ffcc;
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #111;
+            border: 1px solid #444;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        input[type="file"] {
+            margin-bottom: 10px;
+            padding: 20px;
+            /* Increase the padding to make the button larger */
+            font-size: 26px;
+            /* Increase the font size to make the button text larger */
+            background-color: #100858;
+            /* Set the background color */
+            color: white;
+            /* Set the text color */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Add hover effect */
+        input[type="file"]:hover {
+            background-color: #e27508;
+        }
+
+        /* Add focus effect */
+        input[type="file"]:focus {
+            outline: none;
+            box-shadow: 0 0 5px #4CAF50;
+            /* Add a box shadow when focused */
+        }
+
+        input[type="tel"] {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #d0d0d0;
+            color: rgb(16, 1, 1);
+            border: none;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #00ffcc;
+            color: #000;
+            padding: 20px 32px;
+            border: none;
+            font-size: 24px;
+            height: 100px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #00d1a3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Upload Files for {{ username }}</h1>
+        <form action="/upload_by_id" method="POST" enctype="multipart/form-data">
+            <label for="mobile">*Mobile Number/Id:</label>
+            <input type="tel" id="mobile" name="mobile" required>
+
+            <label for="files">Choose files:</label>
+            <input type="file" id="files" name="files" multiple required>
+
+            <input type="submit" value="Upload">
+        </form>
+    </div>
+</body>
+
+</html>

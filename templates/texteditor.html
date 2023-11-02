@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>CodeBhejo</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="/static/texteditor.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    </script>
+    <link rel="shortcut icon" href="/static/aset/profile.png" type="image/png" sizes="16x16">
+    <script src="https://cdn.ckeditor.com/4.17.1/full-all/ckeditor.js"></script>
+
+    <!-- ========================== -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z3CLNJ9HEE"></script>
+    <meta name="google-site-verification" content="bfwg-6HptOECSW2CFIInK85QBi4YYTG-XlmdMwZIf9M" />
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-Z3CLNJ9HEE');
+    </script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/UT_LOGO.jpg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/UT_LOGO.jpg">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/UT_LOGO.jpg">
+    <link rel="manifest" href="/static/site.webmanifest">
+    <link rel="stylesheet" href="/static/admin.css">
+
+    <!-- Meta Tag for SEO -->
+    <meta name="description"
+        content="CodeBhejo is a QR code-based file sharing and management system that simplifies and secures file sharing. Learn how to securely upload, store, and share files using QR codes." />
+    <!-- <meta name="keywords" content="file sharing, file management, QR code, cloud-based storage, secure file sharing" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots"
+        content="index, follow, register, upload_by_id, upload, login, how_to, admin, admin_upload, about">
+    <meta name="keywords"
+        content="share kar do, print kar do, photo copy, file bhejo, file sharing, file management, QR code, cloud-based storage, secure file sharing, QR code file sharing, file sharing system, file management platform, secure file storage, document sharing, data security, cloud file storage, digital file management, online file sharing, file storage solution, data privacy, QR code sharing, document management, file access control, efficient file sharing, file security, file upload, mobile file sharing, web-based file management, data protection, digital document management, document security, file collaboration, file access, online document storage, QR code security, document sharing platform" />
+
+    <meta property="og:title" content="CodeBhejo - QR Code-Based File Sharing and Management System" />
+    <meta property="og:description"
+        content="Simplify and secure file sharing with CodeBhejo. Upload, store, and share files using QR codes." />
+    <meta property="og:image" content="https://www.filebhejo.in/static/fileBhejo.jpg" />
+    <meta property="og:url" content="https://www.filebhejo.in" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CodeBhejo - QR Code-Based File Sharing and Management System" />
+    <meta name="twitter:description"
+        content="Simplify and secure file sharing with CodeBhejo. Upload, store, and share files using QR codes." />
+    <meta name="twitter:image" content="https://www.filebhejo.in/static/fileBhejo.jpg" />
+
+
+</head>
+
+<body class="sb-nav-fixed">
+    <div id="layoutSidenav_content">
+        <!-- Start main section -->
+        <div style="padding-left: 2%; padding-right: 2%;">
+            <div class="content">
+                <h2 class="page-title">
+                    Add New File
+                </h2>
+                <h3>{{MESSAGE}}</h3>
+                <!-- form -->
+                <form action="/newfile/add_post" method="post">
+                    <!-- **********Detaild** selector -->
+                    <div style="padding-bottom: 20px;">
+                        <div class="col-md-4">
+                            <label for="inputState" class="form-label">Select Language</label>
+                            <select class="form-select" aria-label="Default select example" name="name">
+                                {% for category in categories %}
+                                <option value="{{category}}">{{category}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputEmail4" class="form-label">File Name</label>
+                            <input type="text" class="form-control" id="inputEmail4" name="category">
+                        </div>
+                    </div>
+                    <!-- ***********End Selector -->
+                    <div id="editor">
+                        <label for="inputEmail4" class="form-label">File Content</label>
+                        <textarea id="editor1" name="editor1"></textarea>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-success"> Add Post</button>
+                    </div>
+                </form>
+
+                <style>
+                    #editor {
+                        height: 100%;
+                        width: 100%;
+                    }
+
+                    #editor1 {
+                        height: 300px;
+                        width: 100%;
+                    }
+                </style>
+                <!--// form -->
+
+            </div>
+            <script>
+                CKEDITOR.replace('editor11');
+                // Turn off automatic editor creation first
+                // CKEDITOR.disableAutoInline = true;
+                // CKEDITOR.inline( 'editor1' );
+            </script>
+
+            <!-- End Mai Section -->
+
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; CodeBhejo 2023</div>
+                        <div>
+                            <a href="#">Privacy Policy</a>
+                            &middot;
+                            <a href="#">Terms &amp; Conditions</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
+    <script src="/static/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    <script src="/static/datatables-simple-demo.js"></script>
+</body>
+
+</html>
